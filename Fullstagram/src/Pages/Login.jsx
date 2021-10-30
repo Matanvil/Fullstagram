@@ -22,36 +22,40 @@ const Login = (props) => {
   };
 
   return (
-    <Card className={styles.card}>
-      <h1>Fullstagram</h1>
-      <form className={styles.login}>
-        <label htmlFor="email">Email Address</label>
-        <input
-          value={enteredEmail}
-          onChange={emailChangeHandler}
-          name="email"
-          placeholder="Please enter your Email address"
-          type="text"
-        ></input>
-        <label htmlFor="password">Password</label>
-        <input
-          onChange={passwordChangeHandler}
-          value={enteredPassword}
-          name="password"
-          type="password"
-          placeholder="Please enter your password"
-        ></input>
-        <button onClick={onSubmitHandler} type="submit">
-          Login
-        </button>
-      </form>
-      <div>
-        <p>
-          Don't have an account?{" "}
-          <a href="https://www.google.com">Sign Up Now</a>{" "}
-        </p>
-      </div>
-    </Card>
+    <div>
+      <Card className={styles.card}>
+        <h1>Fullstagram</h1>
+        <form className={styles.login}>
+          <label htmlFor="email">Email Address</label>
+          <input
+            value={enteredEmail}
+            onChange={emailChangeHandler}
+            name="email"
+            placeholder="Please enter your Email address"
+            type="text"
+          ></input>
+          <label htmlFor="password">Password</label>
+          <input
+            onChange={passwordChangeHandler}
+            value={enteredPassword}
+            name="password"
+            type="password"
+            placeholder="Please enter your password"
+          ></input>
+          <button onClick={onSubmitHandler} type="submit">
+            Login
+          </button>
+        </form>
+      </Card>
+      <Card className={styles.card}>
+        <div>
+          <p>
+            Don't have an account?{" "}
+            <a href="https://www.google.com">Sign Up Now</a>{" "}
+          </p>
+        </div>
+      </Card>
+    </div>
   );
 };
 
