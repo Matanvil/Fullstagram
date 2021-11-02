@@ -1,10 +1,66 @@
-.login {
-    display: flex;
-    flex-direction: column;
-    margin: 20px;
-    width: 35%;
+html,
+window {
+  background-color: rgb(250, 250, 250);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  text-align: center;
+  margin: 20px 0 25px 0;
+  padding: 10px;
+}
+
+.login .input {
+  width: 80%;
+  margin: 0px 30px 7px 30px;
+  background-color: rgb(250, 250, 250);
+}
+
+.login .button {
+  margin: 8px 0 15px 0;
+  width: 80%;
 }
 
 .card {
-    margin-left: 20px;
+  box-sizing: border-box;
+  background-color: white;
+  border: 1px solid rgb(219, 219, 219);
+  font-family: roboto;
+  font-size: 14px;
+  font-weight: 400;
+  align-items: center;
+  color: rgb(38, 38, 38);
+  line-height: 18px;
+  margin: 10px 0 10px 0;
+  width: 350px;
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  font-size: 13px;
+  font-weight: 500;
+  color: rgb(142, 142, 142);
+  margin: 0 0 10px 0;
+}
+
+.divider .solid {
+    border-bottom: 1px solid #CCC;
+    height: 10px;
+    overflow: visible;
+    padding: 0;
+    color: rgb(7, 6, 6);
+    text-align: center;
+    width: 30%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    
 }

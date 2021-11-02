@@ -1,6 +1,6 @@
 import "./App.css";
-// import Login from "./Pages/Login";
-import Register from "./Pages/Register";
+import Login from "./Pages/Login";
+// import Register from "./Pages/Register";
 
 function App() {
   const checkUser = (email, password) => {
@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div>
-      {/* <Login onUserLogin={checkUser} /> */}
-      <Register handleNewUser={registerUser} />
+      <Login onUserLogin={checkUser} />
+      {/* <Register handleNewUser={registerUser} /> */}
     </div>
   );
 }

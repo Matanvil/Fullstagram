@@ -1,6 +1,8 @@
 import styles from "../Dist/login.module.css";
 import Card from "../UI/Card";
 import { useState } from "react";
+import Button from "../UI/Button";
+import InputField from "../UI/InputField";
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -22,30 +24,33 @@ const Login = (props) => {
   };
 
   return (
-    <div>
+    <div >
       <Card className={styles.card}>
-        <h1>Fullstagram</h1>
+        <h1 className={styles.logo}>Fullstagram</h1>
         <form className={styles.login}>
-          <label htmlFor="email">Email Address</label>
-          <input
-            value={enteredEmail}
+          <InputField
+            className={styles.input}
             onChange={emailChangeHandler}
-            name="email"
-            placeholder="Please enter your Email address"
+            value={enteredEmail}
             type="text"
-          ></input>
-          <label htmlFor="password">Password</label>
-          <input
+            label="Phone number, username, or email"
+          ></InputField>
+          <InputField
+            className={styles.input}
             onChange={passwordChangeHandler}
             value={enteredPassword}
-            name="password"
             type="password"
-            placeholder="Please enter your password"
-          ></input>
-          <button onClick={onSubmitHandler} type="submit">
+            label="Password"
+          ></InputField>
+          <Button onClick={onSubmitHandler} type="submit" className={styles.button}>
             Login
-          </button>
+          </Button>
         </form>
+        <div className={styles.divider}>
+            <hr className={styles.solid}></hr>
+            <div>OR</div>
+            <hr className={styles.solid}></hr>
+          </div>
       </Card>
       <Card className={styles.card}>
         <div>
