@@ -52,15 +52,14 @@ window {
 }
 
 .divider .solid {
-    border-bottom: 1px solid #CCC;
-    height: 10px;
-    overflow: visible;
-    padding: 0;
-    color: rgb(7, 6, 6);
-    text-align: center;
-    width: 30%;
-    border-left: none;
-    border-right: none;
-    border-top: none;
-    
+  border-bottom: 1px solid #ccc;
+  height: 10px;
+  overflow: visible;
+  padding: 0;
+  color: rgb(7, 6, 6);
+  text-align: center;
+  width: 30%;
+  border-left: none;
+  border-right: none;
+  border-top: none;
 }

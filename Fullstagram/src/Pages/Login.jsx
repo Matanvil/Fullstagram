@@ -1,8 +1,9 @@
 import styles from "../Dist/login.module.css";
 import Card from "../UI/Card";
 import { useState } from "react";
-import Button from "../UI/Button";
-import InputField from "../UI/InputField";
+import Button from "@mui/material/Button";
+import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -18,45 +19,51 @@ const Login = (props) => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    // setEnteredPassword("");
-    // setEnteredEmail("");
     props.onUserLogin(enteredEmail, enteredPassword);
   };
 
   return (
-    <div >
+    <div>
       <Card className={styles.card}>
         <h1 className={styles.logo}>Fullstagram</h1>
         <form className={styles.login}>
-          <InputField
-            className={styles.input}
-            onChange={emailChangeHandler}
-            value={enteredEmail}
-            type="text"
+          <TextField
             label="Phone number, username, or email"
-          ></InputField>
-          <InputField
+            variant="outlined"
+            type="text"
             className={styles.input}
-            onChange={passwordChangeHandler}
-            value={enteredPassword}
-            type="password"
+            size="small"
+            value={enteredEmail}
+            onChange={emailChangeHandler}
+          />
+          <TextField
             label="Password"
-          ></InputField>
-          <Button onClick={onSubmitHandler} type="submit" className={styles.button}>
-            Login
+            variant="outlined"
+            type="password"
+            className={styles.input}
+            size="small"
+            value={enteredPassword}
+            onChange={passwordChangeHandler}
+          />
+          <Button
+            variant="contained"
+            type="submit"
+            onClick={onSubmitHandler}
+            className={styles.button}
+          >
+            Log In
           </Button>
         </form>
         <div className={styles.divider}>
-            <hr className={styles.solid}></hr>
-            <div>OR</div>
-            <hr className={styles.solid}></hr>
-          </div>
+          <hr className={styles.solid}></hr>
+          <div>OR</div>
+          <hr className={styles.solid}></hr>
+        </div>
       </Card>
       <Card className={styles.card}>
         <div>
           <p>
-            Don't have an account?{" "}
-            <a href="https://www.google.com">Sign Up Now</a>{" "}
+            Don't have an account? <Link to="../register">Sign up</Link>
           </p>
         </div>
       </Card>

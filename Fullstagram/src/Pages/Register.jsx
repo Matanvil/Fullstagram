@@ -2,6 +2,7 @@ import Card from "../UI/Card";
 import styles from "../Dist/login.module.css";
 import classes from "styled-components";
 import { useRef } from "react";
+import {Link} from 'react-router-dom'
 
 const StyledForm = classes.form`
     display: flex;
@@ -66,7 +67,7 @@ const Register = (props) => {
       </Card>
       <Card className={styles.card}>
         <p>Have an account? </p>
-        <a href="http://">Log in </a>
+        <Link to='../login'>Login</Link>
       </Card>
     </div>
   );
