@@ -4,6 +4,7 @@ import { useState } from "react";
 import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
+import FacebookIcon from "@mui/icons-material/Facebook";
 
 const Login = (props) => {
   const [enteredEmail, setEnteredEmail] = useState("");
@@ -53,12 +54,19 @@ const Login = (props) => {
           >
             Log In
           </Button>
+          <div className={styles.divider}>
+            <hr className={styles.solid}></hr>
+            <div>OR</div>
+            <hr className={styles.solid}></hr>
+          </div>
+          <div className={styles["btn-wrapper"]}>
+            <button className={styles["facebook-btn"]}>
+              <FacebookIcon color="primary" />
+              <span>&nbsp; Log in with Facebook</span>
+            </button>
+          </div>
+          <a href="https://www.facebook.com" className={styles.forgotLink}> Forgot password? </a>
         </form>
-        <div className={styles.divider}>
-          <hr className={styles.solid}></hr>
-          <div>OR</div>
-          <hr className={styles.solid}></hr>
-        </div>
       </Card>
       <Card className={styles.card}>
         <div>

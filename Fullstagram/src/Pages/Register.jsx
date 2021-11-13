@@ -1,28 +1,80 @@
 import Card from "../UI/Card";
 import styles from "../Dist/login.module.css";
-import classes from "styled-components";
+import styled from "styled-components";
 import { useRef } from "react";
-import {Link} from 'react-router-dom'
+import { Link } from "react-router-dom";
+import TextField from "@mui/material/TextField";
+import Button from "@mui/material/Button";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import { useState } from "react";
 
-const StyledForm = classes.form`
+const StyledForm = styled.form`
+  display: flex;
+  flex-direction: column;
+  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+
+  .input-fields {
+    width: 80%;
+    margin: 0px 30px 7px 30px;
+    background-color: rgb(250, 250, 250);
+  }
+
+  .button {
+    margin: 8px 0 15px 0;
+    width: 80%;
+  }
+
+  .divider {
     display: flex;
-    flex-direction: column;
-    margin: 20px;
-    width: 35%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    font-size: 13px;
+    font-weight: 500;
+    color: rgb(142, 142, 142);
+    margin: 10px 0 10px 0;
+  }
+
+  .divider .solid {
+    border-bottom: 1px solid #ccc;
+    height: 10px;
+    overflow: visible;
+    padding: 0;
+    color: rgb(7, 6, 6);
+    text-align: center;
+    width: 30%;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+  }
 `;
 
 const Register = (props) => {
-  const enteredEmailRef = useRef();
-  const enteredFullnameRef = useRef();
-  const enteredUsernameRef = useRef();
-  const enteredPasswordRef = useRef();
+  const [enteredEmail, setEnteredEmail] = useState("");
+  const [enteredFullname, setEnteredFullname] = useState("");
+  const [enteredUsername, setEnteredUsername] = useState("");
+  const [enteredPassword, setEnteredPassword] = useState("");
+
+  const emailchangeHandler = (e) => {
+    setEnteredEmail(e.target.value);
+  };
+
+  const fullnamechangeHandler = (e) => {
+    setEnteredFullname(e.target.value);
+  };
+
+  const usernamechangeHandler = (e) => {
+    setEnteredUsername(e.target.value);
+  };
+
+  const passwordchangeHandler = (e) => {
+    setEnteredPassword(e.target.value);
+  };
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    const enteredEmail = enteredEmailRef.current.value;
-    const enteredFullname = enteredFullnameRef.current.value;
-    const enteredUsername = enteredUsernameRef.current.value;
-    const enteredPassword = enteredPasswordRef.current.value;
+
     const newUserInfo = {
       email: enteredEmail,
       name: enteredFullname,
@@ -33,30 +85,61 @@ const Register = (props) => {
   };
 
   return (
-    <div>
+    <div className="card-wrapper">
       <Card className={styles.card}>
-        <h1>Fullstagram</h1>
+        <h1 className={styles.logo}>Fullstagram</h1>
         <StyledForm onSubmit={onSubmitHandler}>
-          <h2>Sign up to see photos and videos from your friends.</h2>
-          <button>Login with Facebook</button>
-          <div>
-            <div>----</div>
-            <div>or</div>
-            <div>---</div>
+          <h2 className={styles["register-descrpition"]}>
+            Sign up to see photos and videos from your friends.
+          </h2>
+          <Button className="button" variant="contained">
+            <FacebookIcon sx={{ color: "white" }} />
+            <span> &nbsp; Login with Facebook</span>
+          </Button>
+          <div className="divider">
+            <hr className="solid"></hr>
+            <div>OR</div>
+            <hr className="solid"></hr>
           </div>
-          <input
+          <TextField
+            className="input-fields"
             type="text"
-            placeholder="Mobile Number or Email"
-            ref={enteredEmailRef}
+            variant="outlined"
+            size="small"
+            label="Mobile Number or Email"
+            value={enteredEmail}
+            onChange={emailchangeHandler}
           />
-          <input type="text" placeholder="Full Name" ref={enteredFullnameRef} />
-          <input type="text" placeholder="Username" ref={enteredUsernameRef} />
-          <input
+          <TextField
+            className="input-fields"
+            type="text"
+            variant="outlined"
+            size="small"
+            label="Full Name"
+            value={enteredFullname}
+            onChange={fullnamechangeHandler}
+          />
+          <TextField
+            className="input-fields"
+            type="text"
+            variant="outlined"
+            size="small"
+            label="Username"
+            value={enteredUsername}
+            onChange={usernamechangeHandler}
+          />
+          <TextField
+            className="input-fields"
             type="password"
-            placeholder="Password"
-            ref={enteredPasswordRef}
+            variant="outlined"
+            size="small"
+            label="Password"
+            value={enteredPassword}
+            onChange={passwordchangeHandler}
           />
-          <button type="submit">Sign up</button>
+          <Button className="button" variant="contained" type="submit">
+            Sign up
+          </Button>
           <p>
             By signing up, you agree to our
             <a href="http:///"> Terms </a> ,<a href="http:///">Data Policy </a>{" "}
@@ -67,7 +150,7 @@ const Register = (props) => {
       </Card>
       <Card className={styles.card}>
         <p>Have an account? </p>
-        <Link to='../login'>Login</Link>
+        <Link to="../login">Login</Link>
       </Card>
     </div>
   );
