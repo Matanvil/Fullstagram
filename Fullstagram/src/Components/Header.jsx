@@ -4,15 +4,17 @@ import AddCircleOutlineRoundedIcon from '@mui/icons-material/AddCircleOutlineRou
 import ExploreOutlinedIcon from '@mui/icons-material/ExploreOutlined';
 import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 import Avatar from '@mui/material/Avatar';
+import '../Dist/Header.css';
+import logo from '../assets/Logo-Black.png'
 
 const Header = () => {
   return (
-    <div>
+    <div className='header-container'>
       <div className="main-site-logo">
-        <h1>Fullstagram</h1>
+        <img className='logo' src={logo} alt="Main-Logo"/>
       </div>
-      <div className="search bar">
-        <input type="text" placeholder="Search"></input>
+      <div className="search-bar">
+        <input className='search-input' type="text" placeholder="Search"></input>
       </div>
       <div className="navigation-bar">
         <HomeOutlinedIcon />
