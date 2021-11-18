@@ -5,8 +5,12 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import FacebookIcon from "@mui/icons-material/Facebook";
+import { loginActions } from "../store/login-slice";
+import { useDispatch } from "react-redux";
 
 const Login = (props) => {
+const dispatch = useDispatch();
+
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
 
@@ -21,6 +25,7 @@ const Login = (props) => {
   const onSubmitHandler = (event) => {
     event.preventDefault();
     props.onUserLogin(enteredEmail, enteredPassword);
+    dispatch(loginActions.login())
   };
 
   return (
@@ -65,7 +70,10 @@ const Login = (props) => {
               <span>&nbsp; Log in with Facebook</span>
             </button>
           </div>
-          <a href="https://www.facebook.com" className={styles.forgotLink}> Forgot password? </a>
+          <a href="https://www.facebook.com" className={styles.forgotLink}>
+            {" "}
+            Forgot password?{" "}
+          </a>
         </form>
       </Card>
       <Card className={styles.card}>
