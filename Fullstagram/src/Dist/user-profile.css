@@ -1,0 +1,77 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.profile-page-wrapper {
+    padding: 0 20px;
+    margin: 0 150px; 
+}
+
+.user-header-container {
+  display: flex;
+  margin: 40px 0;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.user-actions h2 {
+  font-weight: normal;
+  font-size: 28px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+}
+
+.user-actions {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.user-actions button {
+    all: unset;
+    border: 1px solid rgb(219, 219, 219);
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+}
+
+.user-activity {
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  width: 400px;
+  margin-bottom: 10px;
+}
+
+.user-bio {
+  align-self: flex-start;
+  margin-left: 30px;
+}
+
+.post-display-buttons {
+    text-align: center;
+    margin-top: 20px;
+    border-top: 1px solid rgb(211, 208, 208);
+}
+
+.post-display-buttons button {
+    font-size: 12px;
+    all: unset;
+    border-top: 1px solid grey;
+    margin: 0 25px;
+    padding-top: 10px;
+    cursor: pointer; 
+}
+
