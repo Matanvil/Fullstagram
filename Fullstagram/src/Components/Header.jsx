@@ -5,12 +5,10 @@ import ExploreOutlinedIcon from "@mui/icons-material/ExploreOutlined";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import Avatar from "@mui/material/Avatar";
 import logo from "../assets/Logo-Black.png";
-import { useLocation } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Dist/header.css";
 
 const Header = () => {
-  // const location = useLocation();
 
   return (
     <div className="header-container">

@@ -27,14 +27,10 @@ function App() {
           ) : (
             <Route index element={<Feed />} />
           )}
-          <Route
-            path="register"
-            element={<Register handleNewUser={registerUser} />}
-          />
-          <Route
-            path="profile"
-            element={<UserProfile />}
-          />
+          <Route path="feed" element={<Feed />} />
+          <Route path="login" element={<Login onUserLogin={checkUser} />} />
+          <Route path="register" element={<Register handleNewUser={registerUser} />} />
+          <Route path="profile" element={<UserProfile />} />
         </Routes>
       </Router>
     </Fragment>
