@@ -1,12 +1,12 @@
 require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
-const connectToDb = require('./Backend/models/index.jsx');
+const connectToDb = require('./models/index.js');
 
 const app = express();
 app.use(express.json());
 app.use(cors());
-require('./Backend/routes/users.jsx')(app);
+require('./routes/users.js')(app);
 
 connectToDb().then(() => {
   app.listen(process.env.PORT || 4000, () => {

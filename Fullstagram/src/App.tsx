@@ -3,12 +3,13 @@ import Login from "./Pages/Login";
 import Register from "./Pages/Register";
 import Feed from "./Pages/Feed";
 import UserProfile from "./Pages/UserProfile";
+import {RootState} from './store/index'
 import { useSelector } from "react-redux";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
 import { Fragment } from "react";
 
 function App() {
-  const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
+  const isLoggedIn = useSelector<RootState>((state) => state.login.isLoggedIn);
 
   const checkUser = (email, password) => {
     console.log(email, password);
