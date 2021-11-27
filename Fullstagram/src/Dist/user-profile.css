@@ -5,8 +5,8 @@
 }
 
 .profile-page-wrapper {
-    padding: 0 20px;
-    margin: 0 150px; 
+  padding: 0 20px;
+  margin: 0 150px;
 }
 
 .user-header-container {
@@ -14,7 +14,6 @@
   margin: 40px 0;
   align-items: center;
   justify-content: center;
-
 }
 
 .user-actions h2 {
@@ -39,11 +38,11 @@
 }
 
 .user-actions button {
-    all: unset;
-    border: 1px solid rgb(219, 219, 219);
-    border-radius: 4px;
-    padding: 4px 8px;
-    cursor: pointer;
+  all: unset;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 4px;
+  padding: 4px 8px;
+  cursor: pointer;
 }
 
 .user-activity {
@@ -61,17 +60,27 @@
 }
 
 .post-display-buttons {
-    text-align: center;
-    margin-top: 20px;
-    border-top: 1px solid rgb(211, 208, 208);
+  text-align: center;
+  margin-top: 20px;
+  border-top: 1px solid rgb(211, 208, 208);
 }
 
 .post-display-buttons button {
-    font-size: 12px;
-    all: unset;
-    border-top: 1px solid grey;
-    margin: 0 25px;
-    padding-top: 10px;
-    cursor: pointer; 
+  font-size: 12px;
+  all: unset;
+  border-top: 1px solid grey;
+  margin: 0 25px;
+  padding-top: 10px;
+  cursor: pointer;
 }
 
+.user-posts-list {
+  list-style: none;
+  display: flex;
+  justify-content:space-evenly;
+}
+
+.user-post-item img {
+  width: 300px;
+  height: 300px;
+}
