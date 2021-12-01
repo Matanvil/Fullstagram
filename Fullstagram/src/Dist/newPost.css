@@ -1,9 +1,18 @@
 .top-header {
+  display: flex;
+  align-items: center;
   font-size: 18px;
   font-weight: 500;
   border-bottom: 1px solid grey;
   text-align: center;
   margin: 15px 0 25px 0;
+}
+
+.top-header button {
+  position: absolute;
+  top: 23px;
+  right: 10px;
+  height: 30px;
 }
 
 .center-section {
@@ -35,3 +44,7 @@
   cursor: pointer;
 }
 
+.my-photo {
+  max-width: 100%;
+  max-height: 100%;
+}

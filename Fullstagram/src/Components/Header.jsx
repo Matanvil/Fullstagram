@@ -7,20 +7,11 @@ import Avatar from "@mui/material/Avatar";
 import logo from "../assets/Logo-Black.png";
 import { Link } from "react-router-dom";
 import "../Dist/header.css";
-// import NewPost from "../Components/Posts/NewPost";
-import { useSelector, useDispatch } from "react-redux";
-import { uiActions } from "../store/ui-slice";
 
 const Header = () => {
-  const dispatch = useDispatch();
-  const modalShow = useSelector((state) => state.ui.showModal);
-
-  const newPostHandler = (event) => {
-    dispatch(uiActions.showModal());
-  };
+ 
   return (
     <div className="header-container">
-      {/* {modalShow && <NewPost />} */}
       <div className="main-site-logo">
         <Link to="/">
           <img className="logo" src={logo} alt="Main-Logo" />
@@ -36,7 +27,7 @@ const Header = () => {
       <div className="navigation-bar">
         <HomeOutlinedIcon />
         <SendOutlinedIcon />
-        <Link to="/create/post">
+        <Link to="/create/select-image">
           <AddCircleOutlineRoundedIcon />
         </Link>
         <ExploreOutlinedIcon />
