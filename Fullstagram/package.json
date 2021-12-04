@@ -12,6 +12,7 @@
     "@mui/icons-material": "^5.1.0",
     "@mui/material": "^5.0.6",
     "@reduxjs/toolkit": "^1.6.2",
+    "cloudinary": "^1.27.1",
     "history": "^5.1.0",
     "react": "^17.0.0",
     "react-dom": "^17.0.0",

@@ -1,0 +1,17 @@
+.footer-nav {
+  display: flex;
+  list-style-type: none;
+  justify-content: center;
+  margin: 40px 0;
+  font-size: 12px;
+  color: #7c7c7cdc;
+}
+
+ul li {
+  margin: 0 20px;
+}
+
+ul li a {
+  text-decoration: none;
+  color: inherit;
+}
