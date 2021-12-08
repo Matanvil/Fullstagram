@@ -5,7 +5,8 @@ async function create(req, res, next) {
    description: req.body.description,
    tags: req.body.tags,
    image: req.body.image,
-   userName: req.headers.user
+   userName: req.headers.user,
+   location: req.body.location
   });
 
   res.json(post);

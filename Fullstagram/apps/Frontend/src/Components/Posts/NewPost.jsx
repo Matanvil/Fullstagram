@@ -15,7 +15,7 @@ const NewPost = () => {
   const uploadImage = async () => {
     const fileInput = document.querySelector("#file");
     const formData = new FormData();
-    formData.append("file", fileInput.files[0]);
+    formData.append("file", fileInput.files[0]); 
     const myImageLink = await fetchImg(formData);
     dispatch(postActions.addImage({ image: myImageLink }));
   };

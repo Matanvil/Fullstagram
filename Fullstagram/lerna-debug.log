@@ -1,0 +1,19 @@
+0 silly argv {
+0 silly argv   _: [ 'clean' ],
+0 silly argv   lernaVersion: '4.0.0',
+0 silly argv   '$0': 'C:\\Users\\Matan\\AppData\\Roaming\\npm\\node_modules\\lerna\\cli.js'
+0 silly argv }
+1 notice cli v4.0.0
+2 verbose rootPath C:\tmp\Matan-Coding\Fullstagram\Fullstagram
+3 info Removing the following directories:
+4 info clean apps\Backend\node_modules
+4 info clean apps\Frontend\node_modules
+5 info clean removing C:\tmp\Matan-Coding\Fullstagram\Fullstagram\apps\Backend\node_modules
+6 silly rimrafDir C:\tmp\Matan-Coding\Fullstagram\Fullstagram\apps\Backend\node_modules
+7 info clean removing C:\tmp\Matan-Coding\Fullstagram\Fullstagram\apps\Frontend\node_modules
+8 silly rimrafDir C:\tmp\Matan-Coding\Fullstagram\Fullstagram\apps\Frontend\node_modules
+9 verbose rimrafDir removed C:\tmp\Matan-Coding\Fullstagram\Fullstagram\apps\Backend\node_modules
+10 error Error: Command failed with exit code 1: C:\Program Files\nodejs\node.exe C:\tmp\Matan-Coding\Fullstagram\Fullstagram\node_modules\rimraf\bin.js --no-glob C:\tmp\Matan-Coding\Fullstagram\Fullstagram\apps\Frontend\node_modules\
+10 error     at makeError (C:\tmp\Matan-Coding\Fullstagram\Fullstagram\node_modules\execa\lib\error.js:60:11)
+10 error     at handlePromise (C:\tmp\Matan-Coding\Fullstagram\Fullstagram\node_modules\execa\index.js:118:26)
+10 error     at processTicksAndRejections (internal/process/task_queues.js:95:5)
