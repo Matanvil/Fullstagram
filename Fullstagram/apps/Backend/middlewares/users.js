@@ -2,6 +2,7 @@ const jwt = require("jsonwebtoken");
 const { getUser } = require("../services/user");
 
 const TEN_MINUTES = 1000 * 60 * 10;
+
 const checkUser = async (req, res) => {
   const token = req.cookies.token;
 

@@ -9,7 +9,6 @@ import { Link } from "react-router-dom";
 import "../Dist/header.css";
 
 const Header = () => {
- 
   return (
     <div className="header-container">
       <div className="main-site-logo">
@@ -25,8 +24,12 @@ const Header = () => {
         ></input>
       </div>
       <div className="navigation-bar">
-        <HomeOutlinedIcon />
-        <SendOutlinedIcon />
+        <Link to="/">
+          <HomeOutlinedIcon />
+        </Link>
+        <Link to="/inbox">
+          <SendOutlinedIcon />
+        </Link>
         <Link to="/create/select-image">
           <AddCircleOutlineRoundedIcon />
         </Link>

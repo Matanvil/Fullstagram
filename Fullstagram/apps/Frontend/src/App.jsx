@@ -1,5 +1,6 @@
 import "./App.css";
 import Login from "./Pages/Login";
+import Inbox from "./Pages/Inbox";
 import Register from "./Pages/Register";
 import Feed from "./Pages/Feed";
 import UserProfile from "./Pages/UserProfile";
@@ -35,6 +36,7 @@ function App() {
           <Route path="profile" element={<UserProfile />} ></Route>
           <Route path="/create/select-image" element={<NewPost />} />
           <Route path="/create/post-info" element={<NewPostInfo />} />
+          <Route path="/inbox" element={<Inbox />} />
         </Routes>
       </Router>
     </Fragment>

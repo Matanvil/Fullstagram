@@ -34,7 +34,6 @@ const NewPostInfo = () => {
     };
     try {
       await uploadPost(newPost);
-      console.log(newPost);
     } catch (err) {
       console.log(err);
     }

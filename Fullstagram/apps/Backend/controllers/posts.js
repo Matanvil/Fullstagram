@@ -1,12 +1,13 @@
 const { createPost } = require("../services/post");
 
 async function create(req, res, next) {
+  const data = req.body
   const post = await createPost({
-   description: req.body.description,
-   tags: req.body.tags,
-   image: req.body.image,
+   description: data.description,
+   tags: data.tags,
+   image: data.image,
    userName: req.headers.user,
-   location: req.body.location
+   location: data.location
   });
 
   res.json(post);
