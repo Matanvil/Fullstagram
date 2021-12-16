@@ -7,18 +7,45 @@ import UserProfile from "./Pages/UserProfile";
 import NewPost from "./Components/Posts/NewPost";
 import NewPostInfo from "./Pages/newPostInfo";
 import { useSelector } from "react-redux";
-import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Fragment } from "react";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.login.isLoggedIn);
 
-  const checkUser = (email, password) => {
-    console.log(email, password);
+
+  const checkUser = async (email, password) => {
+    const loginUser = {
+      email,
+      password,
+    };
+    try {
+      const response = await fetch("http://localhost:4000/api/users/login", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(loginUser),
+      });
+      const data = await response.json();
+      console.log(data);
+    } catch (err) {
+      console.log("login failed");
+    }
   };
 
-  const registerUser = (user) => {
-    console.log(user);
+  const registerUser = async (userInfo) => {
+    const response = await fetch("http://localhost:4000/api/users", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(userInfo),
+    });
+    const data = await response.json();
+    console.log(data);
   };
 
   return (
@@ -32,8 +59,11 @@ function App() {
           )}
           <Route path="feed" element={<Feed />} />
           <Route path="login" element={<Login onUserLogin={checkUser} />} />
-          <Route path="register" element={<Register handleNewUser={registerUser} />} />
-          <Route path="profile" element={<UserProfile />} ></Route>
+          <Route
+            path="register"
+            element={<Register handleNewUser={registerUser} />}
+          />
+          <Route path="profile" element={<UserProfile />}></Route>
           <Route path="/create/select-image" element={<NewPost />} />
           <Route path="/create/post-info" element={<NewPostInfo />} />
           <Route path="/inbox" element={<Inbox />} />

@@ -1,5 +1,5 @@
 module.exports = (app) => {
-  require("./users.js")(app);
+  require("./user.js")(app);
   require("./upload.js")(app);
-  require("./posts.js")(app);
+  require("./post.js")(app);
 };
