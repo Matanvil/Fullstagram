@@ -6,22 +6,29 @@ import Feed from "./Pages/Feed";
 import UserProfile from "./Pages/UserProfile";
 import NewPost from "./Components/Posts/NewPost";
 import NewPostInfo from "./Pages/newPostInfo";
-
-import checkUser from "./services/check-user";
+import { useDispatch, useSelector } from "react-redux";
+import checkUser from './services/check-user'
 import { Routes, Route, useNavigate } from "react-router-dom";
+import { userActions } from "./store/user-slice";
 import { Fragment, useEffect } from "react";
 
 function App() {
-  const navigate = useNavigate();
+  const user = useSelector(state => state.user)
+  // const dispatch = useDispatch();
 
-  useEffect(async () => {
-    const response = await fetch("http://localhost:4000/api/users/me");
-    const data = await response.json();
-    if (data.err) {
-      navigate('/login')
-    }
-  }, []);
+  
+  // useEffect(async () => {
+  //   const data = checkUser()
+  //   dispatch(
+  //     userActions.setUser({
+  //       name: data.name,
+  //       email: data.email,
+  //       username: data.username,
+  //     })
+  //   );
+  // },[])
 
+  console.log(user)
   return (
     <Fragment>
       <Routes>

@@ -34,14 +34,19 @@ const checkUser = async (req, res) => {
   //>10 validate with db
   const user = await getUser(payload.user._id)
   if (!(user &&
-    user.authenticationMethod && 
-    user.authenticationMethod.created === payload.created &&
-    user.authenticationMethod.identifier === payload.identifier
+    user.authenticationMethods && 
+    user.authenticationMethods.created === payload.created &&
+    user.authenticationMethods.identifier === payload.identifier
     )) {
     return res.status(401)
   }
 
-
+  const newPayload = {
+    user: {id: user.id},
+    created: new Date.toJSON(),
+    identifier: user.authenticationMethods.identifier 
+  }
+  const token = jwt.sign(newPayload, process,env.JWT_SECRET)
   
   // db token = (
   //1. create token

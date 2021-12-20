@@ -43,7 +43,8 @@ const userSchema = new mongoose.Schema({
     {
       token: { type: String, required: true },
     },
-  ]
+  ],
+  authenticationMethods: {created: String, identifier: String}
 }, {
   timestamps: true,
 });
