@@ -6,7 +6,7 @@ const connectToDb = require("./models");
 const userRouter = require("./routes/user")
 const postRouter = require("./routes/post")
 
-const port = process.env.PORT || 5000
+const port = process.env.PORT || 4000
 
 
 const app = express();

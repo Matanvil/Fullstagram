@@ -5,12 +5,12 @@ import Button from "@mui/material/Button";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import FacebookIcon from "@mui/icons-material/Facebook";
-import { loginActions } from "../store/login-slice";
-import { useDispatch } from "react-redux";
+import loginUser from "../services/login-service";
+import { useNavigate } from "react-router-dom";
 
 const Login = (props) => {
-const dispatch = useDispatch();
-
+  const navigate = useNavigate();
+  const [isError, useIsError] = useState(false)
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredPassword, setEnteredPassword] = useState("");
 
@@ -21,18 +21,27 @@ const dispatch = useDispatch();
   const passwordChangeHandler = (event) => {
     setEnteredPassword(event.target.value);
   };
-
-  const onSubmitHandler = (event) => {
+  const onSubmitHandler = async (event) => {
     event.preventDefault();
-    props.onUserLogin(enteredEmail, enteredPassword);
-    dispatch(loginActions.login())
+    try {
+      const user = await loginUser(enteredEmail, enteredPassword);
+      console.log(user)
+      if (user === undefined) {
+        console.log('user not found');
+        useIsError('The Email or Password entered was not recognised, Please check and try again');
+      } else {
+        navigate("/feed");
+      }
+    } catch (error) {
+      console.log(error);
+    }
   };
-
   return (
     <div>
       <Card className={styles.card}>
         <h1 className={styles.logo}>Fullstagram</h1>
         <form className={styles.login}>
+          <p>{isError}</p> <br></br>
           <TextField
             label="Phone number, username, or email"
             variant="outlined"

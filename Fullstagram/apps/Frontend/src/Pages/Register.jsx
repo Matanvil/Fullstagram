@@ -1,12 +1,13 @@
 import Card from "../UI/Card";
 import styles from "../Dist/login.module.css";
 import styled from "styled-components";
-import { useRef } from "react";
 import { Link } from "react-router-dom";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import FacebookIcon from "@mui/icons-material/Facebook";
 import { useState } from "react";
+import regiserUser from '../services/register-service'
+import { useNavigate } from 'react-router-dom';
 
 const StyledForm = styled.form`
   display: flex;
@@ -51,6 +52,7 @@ const StyledForm = styled.form`
 `;
 
 const Register = (props) => {
+  const navigate = useNavigate()
   const [enteredEmail, setEnteredEmail] = useState("");
   const [enteredFullname, setEnteredFullname] = useState("");
   const [enteredUsername, setEnteredUsername] = useState("");
@@ -81,7 +83,8 @@ const Register = (props) => {
       username: enteredUsername,
       password: enteredPassword,
     };
-    props.handleNewUser(newUserInfo);
+    regiserUser(newUserInfo);
+    navigate('/feed')
   };
 
   return (
